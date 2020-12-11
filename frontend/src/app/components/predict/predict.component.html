@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <span style="color:red;" *ngIf="message">{{message}}</span>
+        </div>
+        <div class="col-xs-12 col-md-12 text-center btn-file">
+            
+            <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+            <img [src]="imgURL" class="preview-img" *ngIf="imgURL else imgPlaceHolder">
+            <ng-template #imgPlaceHolder>
+                <img src="/assets/plus-circle-outline-white.svg" class="preview-img" alt="Imagen">
+            </ng-template>
+        </div>
+        <div class="col-12 text-center">
+            <span>Radiograpy</span>
+        </div>
+        <div class="col-12 text-center mt-4">
+            <button class="btn btn-primary" (click)="predict()">Predict image</button>
+        </div>
+    </div>
+
+    <div class="col-12 mt-5 mb-5">
+        <div *ngIf="prediction" class="text-center">
+            <strong>Prediction</strong>:
+            {{ prediction }}
+        </div>
+        <app-loading-screen *ngIf="isFetching"></app-loading-screen>
+    </div>
+</div>
+
+

@@ -3,12 +3,16 @@ from PIL import Image, ImageOps
 import os
 import numpy as np
 from flask import request, jsonify
+from flask_cors import CORS, cross_origin
 from app import create_app
 
 
 app = create_app()
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 
 @app.route("/api/predict", methods=['POST'])
+@cross_origin()
 def home():
     image = request.files.get("image")
     image = Image.open(image.stream).convert('LA')

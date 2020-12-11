@@ -4,3 +4,4 @@ tensorflow
 keras
 tensorflow_datasets
 Pillow
+flask_cors
