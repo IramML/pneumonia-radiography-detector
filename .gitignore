@@ -1,1 +1,3 @@
-training/in
+training/in/images-dataset/
+venv/
+api/app/__pycache__

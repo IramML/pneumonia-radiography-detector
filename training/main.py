@@ -2,18 +2,14 @@ import numpy as np
 import os
 import PIL
 import PIL.Image
-import pandas as pd
-import matplotlib.pyplot as plt
-import tensorflow as tf
 import pathlib
 import random
 import sys
+
 sys.path.insert(0, os.path.join(
     os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib'))
 from utils import Utils
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-
-
 
 if __name__ == "__main__":
     utils = Utils()
