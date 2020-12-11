@@ -1,3 +1,5 @@
 training/in/images-dataset/
 venv/
 api/app/__pycache__
+training/out
+api/model
