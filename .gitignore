@@ -1,6 +1,7 @@
 *.DS_Store
+*.egg-info
+*__pycache__/*.pyc
 training/in/images-dataset/
 venv/
-api/app/__pycache__
 training/out
 api/model

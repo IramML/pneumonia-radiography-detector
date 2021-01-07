@@ -11,12 +11,14 @@ class Utils:
     def create_nn_model(self):
         model = keras.Sequential()
         model.add(layers.Flatten(input_shape=(512, 512)))
+        model.add(layers.BatchNormalization())
+        model.add(layers.Dense(512, activation=tf.nn.relu))
         model.add(layers.Dense(256, activation=tf.nn.relu))
         model.add(layers.Dense(128, activation=tf.nn.relu))
         model.add(layers.BatchNormalization())
-        model.add(layers.Dense(1, activation=tf.nn.sigmoid))
+        model.add(layers.Dense(3, activation=tf.nn.softmax))
 
-        model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+        model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
         return model
 
     def create_images_dataframe(self, images_path, tag):
