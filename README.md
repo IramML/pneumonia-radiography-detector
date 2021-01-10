@@ -1,6 +1,6 @@
 # pneumonia-radiography-detector
 
-Pneumonia detector developed python and tensorflow, flask as a backend and Angular frontend
+Pneumonia and COVID detector developed python and tensorflow, flask as a backend and Angular frontend
 
 ![GIF](web.gif)
 

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class PredictService {
   //URL to flask API
-  url_base = "http://127.0.0.1:5000/api/"
+  url_base = "http://localhost:5000/api/"
 
   constructor(private http: HttpClient) { }
 
